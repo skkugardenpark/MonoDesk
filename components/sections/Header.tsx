@@ -1,24 +1,29 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect, memo, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { Bars3Icon, XMarkIcon, ChevronDownIcon } from '@heroicons/react/24/outline';
 
-const Header = () => {
+const Header = memo(() => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const pathname = usePathname();
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+  const handleScroll = useCallback(() => {
+    setIsScrolled(window.scrollY > 50);
   }, []);
+
+  const handleMobileToggle = useCallback(() => {
+    setIsMobileMenuOpen(prev => !prev);
+  }, []);
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [handleScroll]);
 
   const mainNavItems = [
     { name: 'MAIN', href: '/' },
@@ -222,7 +227,7 @@ const Header = () => {
             <motion.button
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              onClick={handleMobileToggle}
               className="lg:hidden p-2 rounded-lg text-wood-charcoal hover:bg-wood-sage/10 transition-colors duration-300"
             >
               <AnimatePresence mode="wait">
@@ -361,6 +366,8 @@ const Header = () => {
       </div>
     </>
   );
-};
+});
+
+Header.displayName = 'Header';
 
 export default Header; 

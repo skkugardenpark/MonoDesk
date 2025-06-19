@@ -63,24 +63,24 @@ export default function Home() {
             <div className="absolute inset-0 bg-gradient-to-br from-wood-oak/80 via-wood-charcoal/70 to-wood-oak/80"></div>
             <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-black/20"></div>
             
-            {/* Animated Particles */}
+            {/* Optimized Particles */}
             <div className="absolute inset-0">
-              {[...Array(20)].map((_, i) => (
+              {[...Array(8)].map((_, i) => (
                 <motion.div
                   key={i}
-                  className="absolute w-1 h-1 bg-wood-cream/30 rounded-full"
+                  className="absolute w-1 h-1 bg-wood-cream/20 rounded-full"
                   style={{
-                    left: `${Math.random() * 100}%`,
-                    top: `${Math.random() * 100}%`,
+                    left: `${20 + i * 12}%`,
+                    top: `${30 + (i % 2) * 40}%`,
                   }}
                   animate={{
-                    y: [0, -20, 0],
-                    opacity: [0.3, 0.8, 0.3],
+                    y: [0, -15, 0],
+                    opacity: [0.2, 0.6, 0.2],
                   }}
                   transition={{
-                    duration: 3 + Math.random() * 2,
+                    duration: 4,
                     repeat: Infinity,
-                    delay: Math.random() * 2,
+                    delay: i * 0.5,
                   }}
                 />
               ))}
@@ -239,25 +239,24 @@ export default function Home() {
           </motion.div>
         </motion.div>
 
-        {/* Floating Elements */}
+        {/* Optimized Floating Elements */}
         <div className="absolute inset-0 pointer-events-none z-10">
-          {[...Array(6)].map((_, i) => (
+          {[...Array(3)].map((_, i) => (
             <motion.div
               key={i}
-              className="absolute w-2 h-2 bg-wood-cream/20 rounded-full"
+              className="absolute w-2 h-2 bg-wood-cream/15 rounded-full"
               style={{
-                left: `${20 + i * 15}%`,
-                top: `${30 + (i % 2) * 40}%`,
+                left: `${30 + i * 20}%`,
+                top: `${40 + (i % 2) * 20}%`,
               }}
               animate={{
-                y: [0, -30, 0],
-                opacity: [0.2, 0.8, 0.2],
-                scale: [1, 1.2, 1],
+                y: [0, -20, 0],
+                opacity: [0.15, 0.4, 0.15],
               }}
               transition={{
-                duration: 4 + Math.random() * 2,
+                duration: 6,
                 repeat: Infinity,
-                delay: i * 0.5,
+                delay: i * 1,
               }}
             />
           ))}
@@ -426,6 +425,9 @@ export default function Home() {
                     width={800}
                     height={600}
                     className="w-full h-96 md:h-[600px] object-cover transition-transform duration-700 group-hover:scale-105"
+                    loading="lazy"
+                    placeholder="blur"
+                    blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R8dow2n1tlLdZ9lEkjlMEfq2wV7htoP2rRUdOREf/Z"
                   />
                   
                   {/* Enhanced Gradient Overlay */}
@@ -528,6 +530,9 @@ export default function Home() {
                         width={800}
                         height={500}
                         className="w-full h-96 md:h-[500px] object-cover"
+                        loading="lazy"
+                        placeholder="blur"
+                        blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R8dow2n1tlLdZ9lEkjlMEfq2wV7htoP2rRUdOREf/Z"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-wood-charcoal/30 to-transparent"></div>
                     </div>
