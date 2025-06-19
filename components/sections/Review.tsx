@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { StarIcon, UserIcon } from '@heroicons/react/24/solid';
+import { StarIcon } from '@heroicons/react/24/solid';
 
 const Review = () => {
   const reviews = [
@@ -195,7 +195,7 @@ const Review = () => {
           className="text-center mt-16"
         >
           <p className="font-playfair text-xl md:text-2xl font-light text-white/90 mb-6 italic">
-            "당신도 MONODESK와 함께 특별한 경험을 시작해보세요"
+            &ldquo;당신도 MONODESK와 함께 특별한 경험을 시작해보세요&rdquo;
           </p>
           <motion.button
             whileHover={{ scale: 1.05 }}

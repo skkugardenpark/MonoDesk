@@ -79,7 +79,7 @@ const About = () => {
           className="text-center mt-16"
         >
           <p className="font-playfair text-2xl md:text-3xl font-light text-white/90 italic">
-            "당신의 공간이 곧 당신의 이야기입니다"
+            &ldquo;당신의 공간이 곧 당신의 이야기입니다&rdquo;
           </p>
         </motion.div>
       </div>

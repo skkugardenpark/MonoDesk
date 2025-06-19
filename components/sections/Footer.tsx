@@ -4,26 +4,14 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { 
-  MapPinIcon, 
   PhoneIcon, 
-  EnvelopeIcon,
-  PaperAirplaneIcon
+  EnvelopeIcon
 } from '@heroicons/react/24/outline';
 import { 
-  HeartIcon,
-  CheckCircleIcon
+  HeartIcon
 } from '@heroicons/react/24/solid';
 
 const Footer = () => {
-  const [email, setEmail] = useState('');
-  const [isSubscribed, setIsSubscribed] = useState(false);
-
-  const handleSubscribe = (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubscribed(true);
-    setEmail('');
-    setTimeout(() => setIsSubscribed(false), 3000);
-  };
 
   const footerLinks = {
     company: [

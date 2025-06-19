@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import Link from 'next/link';
+import Image from 'next/image';
 import Header from '@/components/sections/Header';
 import { useState, useEffect } from 'react';
 
@@ -32,7 +33,7 @@ export default function Home() {
       setCurrentSlide((prev) => (prev + 1) % projectSlides.length);
     }, 5000);
     return () => clearInterval(timer);
-  }, []);
+  }, [projectSlides.length]);
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-wood-sand via-wood-cream to-wood-sand relative overflow-hidden">
@@ -419,9 +420,11 @@ export default function Home() {
                   whileHover={{ scale: 1.02 }}
                   transition={{ duration: 0.5 }}
                 >
-                  <img
+                  <Image
                     src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
                     alt="MONODESK 브랜드 소개"
+                    width={800}
+                    height={600}
                     className="w-full h-96 md:h-[600px] object-cover transition-transform duration-700 group-hover:scale-105"
                   />
                   
@@ -516,12 +519,14 @@ export default function Home() {
                     className={`relative ${slide.reverse ? 'lg:col-start-2' : ''}`}
                   >
                     <div className="relative overflow-hidden rounded-lg shadow-xl">
-                      <img
+                      <Image
                         src={index === 0 ? 
                           "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" :
                           "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
                         }
                         alt={slide.title}
+                        width={800}
+                        height={500}
                         className="w-full h-96 md:h-[500px] object-cover"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-brand-moss/30 to-transparent"></div>

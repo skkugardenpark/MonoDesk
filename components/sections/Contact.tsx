@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { EnvelopeIcon, PhoneIcon, ChatBubbleLeftRightIcon, ClockIcon } from '@heroicons/react/24/outline';
+import { EnvelopeIcon, PhoneIcon, ClockIcon } from '@heroicons/react/24/outline';
 
 const Contact = () => {
   return (

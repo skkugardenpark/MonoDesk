@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
+import Image from 'next/image';
 import Header from '@/components/sections/Header';
 import { MinusIcon, PlusIcon, TrashIcon, ShoppingBagIcon } from '@heroicons/react/24/outline';
 
@@ -157,9 +158,11 @@ export default function CartPage() {
                       >
                         {/* Product Image */}
                         <div className="w-20 h-20 md:w-24 md:h-24 flex-shrink-0">
-                          <img
+                          <Image
                             src={item.image}
                             alt={item.name}
+                            width={96}
+                            height={96}
                             className="w-full h-full object-cover rounded-lg"
                           />
                         </div>
