@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
 import { motion } from 'framer-motion';
 import Header from '@/components/sections/Header';
@@ -111,7 +111,8 @@ const categories = [
   "BUNDLE / SET"
 ];
 
-export default function ShopPage() {
+// ShopContent 컴포넌트 - useSearchParams 사용
+function ShopContent() {
   const searchParams = useSearchParams();
   const [activeCategory, setActiveCategory] = useState("ALL");
   const [filteredProducts, setFilteredProducts] = useState(products);
@@ -314,4 +315,29 @@ export default function ShopPage() {
       <Footer />
     </div>
   );
-} 
+}
+
+// Loading 컴포넌트
+function ShopLoading() {
+  return (
+    <div className="min-h-screen bg-gradient-to-b from-wood-sand via-wood-cream to-wood-sand">
+      <Header />
+      <div className="flex items-center justify-center min-h-[60vh]">
+        <div className="text-center">
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-wood-sage mx-auto mb-4"></div>
+          <p className="text-wood-charcoal/70 font-pretendard">Loading...</p>
+        </div>
+      </div>
+      <Footer />
+    </div>
+  );
+}
+
+// Main ShopPage 컴포넌트 - Suspense로 감싸기
+export default function ShopPage() {
+  return (
+    <Suspense fallback={<ShopLoading />}>
+      <ShopContent />
+    </Suspense>
+  );
+}
