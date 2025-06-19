@@ -28,8 +28,10 @@ module.exports = {
         },
       },
       fontFamily: {
-        'pretendard': ['Pretendard', 'sans-serif'],
-        'noto': ['Noto Sans KR', 'sans-serif'],
+        'playfair': ['var(--font-playfair)', 'serif'],
+        'inter': ['var(--font-inter)', 'sans-serif'],
+        'sans': ['var(--font-inter)', 'system-ui', 'sans-serif'],
+        'serif': ['var(--font-playfair)', 'serif'],
       },
       animation: {
         'fade-in': 'fadeIn 0.5s ease-in-out',

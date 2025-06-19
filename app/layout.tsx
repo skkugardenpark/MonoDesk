@@ -1,5 +1,20 @@
 import type { Metadata } from "next";
+import { Playfair_Display, Inter } from 'next/font/google';
 import "./globals.css";
+
+const playfairDisplay = Playfair_Display({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700', '800', '900'],
+  variable: '--font-playfair',
+  display: 'swap',
+});
+
+const inter = Inter({
+  subsets: ['latin'],
+  weight: ['300', '400', '500', '600', '700'],
+  variable: '--font-inter',
+  display: 'swap',
+});
 
 export const metadata: Metadata = {
   title: "MONODESK - 감성적인 데스크테리어 소품",
@@ -20,13 +35,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ko">
+    <html lang="ko" className={`${playfairDisplay.variable} ${inter.variable}`}>
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
       </head>
-      <body className="antialiased bg-brand-cream text-brand-dark">
+      <body className="antialiased bg-wood-cream text-wood-charcoal font-sans">
         {children}
       </body>
     </html>
