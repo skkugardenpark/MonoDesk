@@ -246,7 +246,7 @@ function ShopContent() {
                         </div>
                       )}
                       {product.isNew && (
-                        <div className="absolute top-4 right-4 bg-gradient-to-r from-brand-pink to-red-500 text-white px-3 py-1 rounded-full text-xs font-bold">
+                        <div className="absolute top-4 right-4 bg-gradient-to-r from-wood-terracotta to-red-500 text-white px-3 py-1 rounded-full text-xs font-bold">
                           NEW
                         </div>
                       )}

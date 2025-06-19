@@ -529,7 +529,7 @@ export default function Home() {
                         height={500}
                         className="w-full h-96 md:h-[500px] object-cover"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-brand-moss/30 to-transparent"></div>
+                      <div className="absolute inset-0 bg-gradient-to-t from-wood-charcoal/30 to-transparent"></div>
                     </div>
                   </motion.div>
 

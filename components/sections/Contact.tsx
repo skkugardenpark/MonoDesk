@@ -5,7 +5,7 @@ import { EnvelopeIcon, PhoneIcon, ClockIcon } from '@heroicons/react/24/outline'
 
 const Contact = () => {
   return (
-    <section id="contact" className="section-padding bg-brand-cream">
+    <section id="contact" className="section-padding bg-wood-cream">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* 섹션 헤더 */}
         <motion.div
