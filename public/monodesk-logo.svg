@@ -1,0 +1,22 @@
+<svg width="160" height="80" viewBox="0 0 160 80" xmlns="http://www.w3.org/2000/svg">
+  <!-- 데스크 아웃라인 - 더 미니멀하고 깔끔하게 -->
+  <g fill="none" stroke="rgba(255,255,255,0.9)" stroke-width="1.5" stroke-linejoin="round">
+    <!-- 상단 -->
+    <path d="M25 15 L135 15" />
+    <!-- 좌측 다리 -->
+    <path d="M25 15 L25 45" stroke-linecap="round"/>
+    <!-- 우측 다리 -->
+    <path d="M135 15 L135 45" stroke-linecap="round"/>
+    <!-- 내부 연결선 (선택적) -->
+    <path d="M30 20 L130 20" stroke="rgba(255,255,255,0.6)" stroke-width="1"/>
+  </g>
+  
+  <!-- MONODESK 텍스트 - 더 얇고 세련되게 -->
+  <text x="80" y="68" 
+        font-family="Arial, Helvetica, sans-serif" 
+        font-size="12" 
+        font-weight="300" 
+        text-anchor="middle" 
+        fill="rgba(255,255,255,0.95)" 
+        letter-spacing="3px">MONODESK</text>
+</svg> 
